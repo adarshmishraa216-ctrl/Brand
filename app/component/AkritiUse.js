@@ -4,7 +4,6 @@ import Image from "next/image";
 
 const HowToUseSection = () => {
   const sectionBgColor = "#FFFFFF";
-  const innerBoxColor = "#F3F4F6";
   const instructionTextColor = "#4B5563";
   const listTextColor = "#6B7280";
 
@@ -40,17 +39,15 @@ const HowToUseSection = () => {
       className="relative w-full overflow-hidden flex flex-col items-center"
       style={{ backgroundColor: sectionBgColor }}
     >
-      {/* ===== Decorative Grey Wave Background — only on Desktop ===== */}
+      {/* ===== Decorative Grey Wave Background (Desktop only) ===== */}
       <div className="hidden lg:block absolute inset-0 z-0">
         <svg
           viewBox="0 0 1440 320"
           preserveAspectRatio="none"
-          className="absolute bottom-0 w-full h-[250px]"
-          style={{ opacity: 0.15, fill: "#F3F4F6" }}
+          className="absolute top-0 w-full h-full"
+          style={{ fill: "#F6F6F6" }}
         >
-          <path
-            d="M0,160L48,144C96,128,192,96,288,117.3C384,139,480,213,576,245.3C672,277,768,267,864,250.7C960,235,1056,213,1152,197.3C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
+          <path d="M0,64L80,85.3C160,107,320,149,480,181.3C640,213,800,235,960,229.3C1120,224,1280,192,1360,176L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
         </svg>
       </div>
 
@@ -136,7 +133,7 @@ const HowToUseSection = () => {
 
         <div
           className="w-full rounded-2xl p-5 shadow-sm flex flex-col"
-          style={{ backgroundColor: innerBoxColor }}
+          style={{ backgroundColor: "#F3F4F6" }}
         >
           <div className="grid grid-cols-2 gap-4 mb-4">
             {steps.slice(0, 2).map((step, index) => (
