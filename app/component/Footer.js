@@ -10,10 +10,10 @@ const Footer = () => {
   const logoSrc = "/akriti-footer-ing.png";
 
   const socialIcons = {
-    facebook: "/akriti-footer-fb.png",
-    instagram: "/akriti-footer-insta.png",
-    x: "/akriti-footer-x.png",
-    youtube: "/akriti-footer-yt.png",
+    facebook: "/akriti-footer-newfb .svg",
+    instagram: "/akriti-footer-newinsta.svg",
+    x: "/akriti-footer-newx.svg",
+    youtube: "/akriti-footer-newyt.svg",
   };
 
   const quickLinks = [
@@ -33,46 +33,60 @@ const Footer = () => {
         className="w-full max-w-[1400px] mx-auto text-sm"
         style={{ color: textColor }}
       >
-        {/* ================= MOBILE VIEW ================= */}
-        <div className="block lg:hidden text-center py-8 px-6">
-          {/* Logo */}
-          <div className="flex justify-center mb-3">
-            <NextImage
-              src={logoSrc}
-              alt="Charvak Ayurveda Logo"
-              width={80}
-              height={80}
-              className="object-contain"
-            />
-          </div>
+        {/* ================= MOBILE VIEW (Logo, Desc, Social) ================= */}
+        <div className="block lg:hidden py-4 px-6">
+          
+          {/* Content Wrapper for Logo/Text/Icons (Flex Row) */}
+          <div className="flex items-center justify-start gap-4 sm:gap-4">
+            
+            {/* 1. Logo (Left Side) */}
+            <div className="shrink-0">
+              <NextImage
+                src={logoSrc}
+                alt="Charvak Ayurveda Logo"
+                width={80} // Size based on visual comparison
+                height={80}
+                className="object-contain"
+              />
+            </div>
 
-          {/* Description */}
-          <p className="text-gray-300 text-sm mb-4 leading-snug">
-            Charvak Ayurveda, Ayurvedic science for modern wellness.
-          </p>
+            {/* 2. Text & Social Icons (Right Side - Stacked) */}
+            <div className="flex flex-col items-start justify-center">
+              
+              {/* Description Text */}
+              <p className="text-gray-300 text-sm mb-2 leading-snug">
+                Charvak Ayurveda, Ayurvedic science for <br /> modern wellness.
+              </p>
 
-          {/* Social Icons */}
-          <div className="flex justify-center space-x-5 mt-2">
-            {Object.entries(socialIcons).map(([key, src]) => (
-              <a
-                key={key}
-                href={`#${key}`}
-                aria-label={key}
-                className="w-7 h-7 flex items-center justify-center"
-              >
-                <NextImage
-                  src={src}
-                  alt={key}
-                  width={28}
-                  height={28}
-                  className="object-contain"
-                />
-              </a>
-            ))}
+              {/* Social Icons */}
+              <div className="flex justify-start space-x-3 mt-1">
+                {Object.entries(socialIcons).map(([key, src]) => (
+                  <a
+                    key={key}
+                    href={`#${key}`}
+                    aria-label={key}
+                    className="w-6 h-6 flex items-center justify-center"
+                  >
+                    <NextImage
+                      src={src}
+                      alt={key}
+                      width={24} // Adjusted size
+                      height={24} // Adjusted size
+                      className="object-contain"
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
+          
+          {/* NOTE: Additional links (Quick Links/Contact) would typically go below this section on mobile. */}
+          {/* I have kept the links out of this main block to focus on the logo/social design. */}
+
         </div>
+        {/* END OF MOBILE VIEW */}
 
-        {/* ================= DESKTOP VIEW ================= */}
+        {/* ================= DESKTOP VIEW (NO CHANGE) ================= */}
         <div
           className="hidden lg:flex flex-wrap justify-between pt-12 pb-8 px-8 lg:px-16 border-b border-gray-600"
           style={{ minHeight: "250px" }}
@@ -145,15 +159,15 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Contact</h4>
             <div className="space-y-3 text-gray-400">
               <p className="flex items-center space-x-2">
-                <span>&#9742;</span>
+                <span><img src="/phone.svg" alt="" /></span>
                 <span>+919779968899</span>
               </p>
               <p className="flex items-center space-x-2">
-                <span>&#9993;</span>
+                <span><img src="/akriti-letterbox.svg" alt="" /></span>
                 <span>care@charvak.com</span>
               </p>
               <p className="flex items-start space-x-2 pt-1">
-                <span>&#9906;</span>
+                <span><img src="/akriti-location.svg" alt="" /></span>
                 <span className="max-w-xs">
                   1st Floor, Plot No. 1072, JLPL Sector 82, S.A.S Nagar, Mohali,
                   India
@@ -163,8 +177,10 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* ================= BOTTOM BAR ================= */}
-        <div className="flex flex-col md:flex-row justify-between items-center py-4 px-8 lg:px-16 text-xs text-gray-400 border-t border-gray-700">
+        {/* ================= BOTTOM BAR (Desktop Only) ================= */}
+        <div 
+          className="hidden lg:flex flex-col md:flex-row justify-between items-center py-4 px-8 lg:px-16 text-xs text-gray-400 border-t border-gray-700"
+        >
           <p className="mb-2 md:mb-0">
             © 2025 Charvak Ayurveda All rights reserved
           </p>

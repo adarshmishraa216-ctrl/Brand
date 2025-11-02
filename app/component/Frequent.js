@@ -50,7 +50,7 @@ const FAQSection = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden flex justify-center py-12"
+      className="relative w-full overflow-hidden flex justify-center py-5"
       style={{ backgroundColor: sectionBgColor }}
     >
       <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 flex flex-col lg:flex-row items-center justify-between gap-10">
@@ -101,7 +101,7 @@ const FAQSection = () => {
             src={sideImageSrc}
             alt="Aakriti Product Box"
             fill
-            className="object-contain"
+            className="object-contain scale-110 transform -translate-y-7"
           />
         </div>
       </div>

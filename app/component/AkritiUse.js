@@ -7,6 +7,12 @@ const HowToUseSection = () => {
   const instructionTextColor = "#4B5563";
   const listTextColor = "#6B7280";
 
+  // 🌟 NEW CONTROL VARIABLES 🌟
+  // Adjust these two variables to change the size of ALL number icons.
+  const DESKTOP_NUMBER_SIZE = 40; // Default size (e.g., 40x40 pixels)
+  const MOBILE_NUMBER_SIZE = 25;  // Default size (e.g., 25x25 pixels) 
+  // You can set height separately if needed: const MOBILE_NUMBER_HEIGHT = 35;
+
   const steps = [
     {
       numberImg: "/akriti-use-1.png",
@@ -59,7 +65,7 @@ const HowToUseSection = () => {
             src="/akriti-use-model.png"
             alt="Woman holding product jar"
             fill
-            className="object-cover lg:object-contain object-right-bottom scale-x-[-1]"
+            className="object-cover lg:object-contain object-right-bottom transform scale-x-[-1] scale-130"
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority
           />
@@ -74,11 +80,12 @@ const HowToUseSection = () => {
           <div className="flex flex-col space-y-8">
             {steps.map((step, index) => (
               <div key={index} className="flex items-start space-x-4">
+                {/* Desktop Number Image - Uses DESKTOP_NUMBER_SIZE */}
                 <Image
                   src={step.numberImg}
                   alt={`Step ${index + 1}`}
-                  width={30}
-                  height={45}
+                  width={DESKTOP_NUMBER_SIZE}
+                  height={DESKTOP_NUMBER_SIZE} // Using same size for height/width
                   className="flex-shrink-0 mt-1"
                 />
                 <div className="flex flex-col">
@@ -122,8 +129,8 @@ const HowToUseSection = () => {
       </div>
 
       {/* ===== Mobile Version ===== */}
-      <div className="block lg:hidden w-full flex flex-col items-center px-6 py-10 relative z-10">
-        <div className="flex flex-col items-center mb-4">
+      <div className="block lg:hidden w-full flex flex-col items-center px-6 py-4 relative z-10">
+        <div className="flex flex-col items-center mb-2">
           <img
             src="akriti-use-head.png"
             alt="How to use heading"
@@ -139,11 +146,12 @@ const HowToUseSection = () => {
             {steps.slice(0, 2).map((step, index) => (
               <div key={index} className="flex flex-col items-start space-y-2">
                 <div className="flex items-center space-x-2">
+                  {/* Mobile Number Image (Step 1 & 2) - Uses MOBILE_NUMBER_SIZE */}
                   <Image
                     src={step.numberImg}
                     alt={`Step ${index + 1}`}
-                    width={22}
-                    height={30}
+                    width={MOBILE_NUMBER_SIZE}
+                    height={MOBILE_NUMBER_SIZE} 
                     className="flex-shrink-0"
                   />
                   <h3
@@ -166,11 +174,12 @@ const HowToUseSection = () => {
           <div className="flex flex-row items-center justify-between">
             <div className="flex flex-col items-start space-y-2 w-[70%]">
               <div className="flex items-center space-x-2">
+                {/* Mobile Number Image (Step 3) - Uses MOBILE_NUMBER_SIZE */}
                 <Image
                   src={steps[2].numberImg}
                   alt="Step 3"
-                  width={20}
-                  height={30}
+                  width={MOBILE_NUMBER_SIZE}
+                  height={MOBILE_NUMBER_SIZE}
                   className="flex-shrink-0"
                 />
                 <h3
@@ -188,12 +197,12 @@ const HowToUseSection = () => {
               </p>
             </div>
 
-            <div className="relative w-[160px] h-[150px] flex-shrink-0 self-center mb-0">
+            <div className="relative w-[160px] h-[150px] flex-shrink-0 self-center mb-0  ">
               <Image
                 src="/akriti-use-model.png"
                 alt="Model"
                 fill
-                className="object-contain"
+                className="object-contain scale-140 transform -translate-y-5"
               />
             </div>
           </div>
@@ -213,7 +222,7 @@ const HowToUseSection = () => {
                 className="text-[13px] leading-tight"
                 style={{ color: listTextColor }}
               >
-                {item}
+                  {item}
               </li>
             ))}
           </ul>

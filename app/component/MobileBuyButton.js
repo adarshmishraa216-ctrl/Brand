@@ -19,9 +19,10 @@ export default function MobileBuyButton() {
 
   return (
     <div
-      className="fixed left-0 w-full bg-white shadow-lg border-t border-gray-200 flex justify-center py-3 z-[9999] md:hidden"
+      className="fixed left-0 w-full bg-[#FFF2E1] shadow-lg border-t border-gray-200 flex justify-center py-3 z-[9999] md:hidden"
       style={{
         position: "fixed",
+        
         bottom: "0px",
         paddingBottom: "calc(env(safe-area-inset-bottom) + 10px)",
         transform: "translateY(0)",

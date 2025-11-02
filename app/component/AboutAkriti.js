@@ -3,25 +3,57 @@ import React from "react";
 import Image from "next/image";
 
 const AboutAakritiSection = () => {
-  const subHeadingColor = "#DF67A3";
+  const subHeadingColor = "#646464";
   const textColor = "#000000";
-  const iconBoxBg = "#FFF2E1";
+  const iconBoxBg = "#FFF2E1"; // Light tan color for the boxes
   const darkGreenIconBg = "#2A4E42";
-  const sectionBgColor = "#2A4E42";
+  const sectionBgColor = "#2A4E42"; // Dark green for background sections
+
+  // Data structure for the boxes
+  const boxData = [
+    { src: "/akriti_tree-3-fill.png", label: "100% Ayurvedic" },
+    { src: "/akriti_test-tube-fill.png", label: "Lab Tested" },
+    { src: "/akriti-GMP-2page.png", label: "GMP Certified" },
+    { src: "/akriti-ISO-page2.png", label: "ISO Approved" },
+  ];
+
+  // Component to render a single box - MODIFIED FOR NEW DESIGN
+  const renderTrustBox = (box, widthClass) => (
+    <div
+      key={box.label}
+      // MODIFIED: flex-row, items-center, p-4, removed shadow-sm and h-16
+      className={`flex flex-row items-center p-4 rounded-xl ${widthClass}`} 
+      style={{ backgroundColor: iconBoxBg }}
+    >
+        <div
+            className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center mr-3" // Adjusted size and margin for icon container
+            style={{ backgroundColor: darkGreenIconBg }}
+        >
+            <Image src={box.src} alt={box.label} width={20} height={20} /> {/* Adjusted icon size if needed */}
+        </div>
+        <p
+            className="text-sm font-medium text-left" // Ensure text is left-aligned
+            style={{ color: textColor }}
+        >
+            {box.label}
+        </p>
+    </div>
+  );
+
 
   return (
     <section className="relative w-full overflow-hidden bg-white">
       {/* Main Container */}
-      <div className="max-w-[1440px] mx-auto flex flex-col-reverse lg:flex-row items-center justify-center py-16 px-8 lg:px-16 gap-12">
+      <div className="max-w-[1440px] mx-auto flex flex-col-reverse lg:flex-row items-center justify-center py-9 px-8 lg:px-16 gap-12">
 
-        {/* Left Section: Image of the girl */}
-        {/* Desktop version (unchanged) */}
-        <div className="hidden lg:flex flex-shrink-0 relative w-[400px] sm:w-[500px] h-[500px] sm:h-[600px] justify-center items-center order-2 lg:order-1">
+        {/* Left Section: Image of the girl (Desktop version - NO CHANGE) */}
+        <div className="hidden lg:flex shrink-0 relative w-[400px] sm:w-[500px] h-[500px] sm:h-[600px] justify-center items-center order-2 lg:order-1">
           <Image
             src="/akriti-girlimage2.png"
             alt="Girl holding Aakriti product"
             layout="fill"
             objectFit="contain"
+            className="scale-110"
           />
         </div>
 
@@ -29,7 +61,7 @@ const AboutAakritiSection = () => {
         <div className="flex flex-col items-center text-center max-w-2xl order-1 lg:order-2">
           
           {/* About Aakriti heading */}
-          <div className="w-full flex justify-center mb-0">
+          <div className="w-full flex justify-center mb-3">
             <Image
               src="/akriti-about.png"
               alt="About Aakriti Heading Graphic"
@@ -39,20 +71,23 @@ const AboutAakritiSection = () => {
           </div>
 
           {/* Girl image – visible only on mobile */}
-          <div className="flex lg:hidden justify-center mb-0 w-full">
-            <div className="relative w-[280px] sm:w-[500px] h-[300px] sm:h-[600px]">
-              <Image
-                src="/akriti-girlimage2.png"
-                alt="Girl holding Aakriti product"
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
+          <div className="flex lg:hidden justify-center mb-5 w-full">
+           <div 
+    // MODIFIED: Added transform and -translate-y-8 (mobile/default)
+    className="relative w-[280px] sm:w-[500px] h-[300px] sm:h-[600px] transform translate-y-7" 
+>
+    <Image
+        src="/akriti-girlimage2.png"
+        alt="Girl holding Aakriti product"
+        layout="fill"
+        objectFit="contain"
+    />
+</div>
           </div>
 
           {/* Pink text (for Desktop) */}
           <h3
-            className="hidden md:block font-meowscript text-4xl mb-2"
+            className="hidden md:block font-meowscript text-4xl mb-5"
             style={{
               color: subHeadingColor,
               fontFamily: "Meow Script, cursive",
@@ -76,14 +111,28 @@ const AboutAakritiSection = () => {
             naturally.
           </p>
 
-          {/* Four Boxes */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full mb-3 md:mb-8">
-            {[
-              { src: "/akriti_tree-3-fill.png", label: "100% Ayurvedic" },
-              { src: "/akriti_test-tube-fill.png", label: "Lab Tested" },
-              { src: "/akriti-GMP-2page.png", label: "GMP Certified" },
-              { src: "/akriti-ISO-page2.png", label: "ISO Approved" },
-            ].map((box, index) => (
+          {/* Four Boxes - MODIFIED: Custom Mobile Layout */}
+          <div className="w-full mb-3 md:mb-8 block lg:hidden "> {/* Added px-4 for overall horizontal padding */}
+            {/* Box 1 (Full Width) */}
+            <div className="mb-4">
+              {renderTrustBox(boxData[0], "w-full")}
+            </div>
+
+            {/* Box 2 (Full Width) */}
+            <div className="mb-4">
+              {renderTrustBox(boxData[1], "w-full")}
+            </div>
+            
+            {/* Boxes 3 & 4 (Half Width, Side-by-Side) */}
+            <div className="flex justify-between gap-4">
+              {renderTrustBox(boxData[2], "w-1/2")}
+              {renderTrustBox(boxData[3], "w-1/2")}
+            </div>
+          </div>
+          
+          {/* Four Boxes - ORIGINAL DESKTOP GRID (NO CHANGE) */}
+          <div className="hidden lg:grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full mb-3 md:mb-8">
+            {boxData.map((box, index) => (
               <div
                 key={index}
                 className="flex flex-col items-center justify-center p-4 rounded-xl"
@@ -109,7 +158,7 @@ const AboutAakritiSection = () => {
           <h3
             className="block md:hidden font-meowscript text-4xl mt-2"
             style={{
-              color: subHeadingColor,
+              color: "#DF67A3",
               fontFamily: "Meow Script, cursive",
               fontWeight: 400,
               fontSize: "36px",

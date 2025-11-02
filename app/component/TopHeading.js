@@ -17,7 +17,7 @@ const TopHeading = () => {
           <p
             className="
               text-white 
-              text-[10px] xs:text-[11px] sm:text-sm md:text-base 
+              text-[10px] xs:text-[11px] sm:text-[8px] md:text-base 
               font-light leading-snug tracking-wide
               whitespace-nowrap
             "

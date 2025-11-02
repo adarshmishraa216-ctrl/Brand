@@ -32,12 +32,12 @@ const LovedByWomenSection = () => {
 
   return (
     <section 
-      className="relative w-full overflow-hidden flex flex-col items-center py-20"
+      className="relative w-full overflow-hidden flex flex-col items-center py-10"
     >
       <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading: "1969 725 Loved by Women Across World" */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           
           <div className="flex justify-center">
             <img src="akriti-model-head.png" alt="" />

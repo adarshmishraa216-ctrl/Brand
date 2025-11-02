@@ -4,7 +4,7 @@ import NextImage from "next/image";
 
 const HeroBanner = () => {
   const bgImageSrc = "/akriti-buttom-model.png";
-  const buttonColor = "#1B8065";
+  const buttonColor = "#007850";
   const topHeadingFont = "'Roboto', sans-serif";
 
   return (
@@ -29,10 +29,17 @@ const HeroBanner = () => {
       <div className="absolute inset-0 max-w-[1200px] mx-auto flex items-center px-6 sm:px-10">
         <div className="flex flex-col items-start text-white w-full sm:w-auto">
           
-          {/* Main Heading */}
+          {/* Main Heading - FIX APPLIED HERE */}
           <h1
-            className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold tracking-wide mb-2 leading-tight"
-            style={{ fontFamily: topHeadingFont }}
+            // MODIFIED: Restored standard responsive classes for mobile sizing (text-xl to md:text-3xl)
+            // Scoped the fixed 36px size to the lg breakpoint using arbitrary values: lg:text-[36px]
+            className="text-xl sm:text-2xl lg:text-[36px] font-bold tracking-wide mb-2 leading-tight"
+            style={{ 
+              fontFamily: 'Rubik, sans-serif', 
+              fontWeight: 400, // Regular weight as per Figma (400)
+              lineHeight: '100%',
+              letterSpacing: '0%', 
+            }}
           >
             Feel Beautiful. Stay Confident. Live Natural.
           </h1>
@@ -44,7 +51,7 @@ const HeroBanner = () => {
               color: "#DF67A3",
               lineHeight: "100%",
             }}
-            className="font-light mb-6 text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
+            className="font-light mb-6 text-3xl sm:text-5xl md:text-6xl lg:text-6xl"
           >
             Nurture Your Natural Grace.
           </p>
