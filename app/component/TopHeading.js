@@ -11,13 +11,15 @@ const TopHeading = () => {
         <div
           className="
             flex flex-col sm:flex-row items-center justify-center 
-            py-2 px-3 text-center
+            py-1.5 px-2 text-center
           "
         >
           <p
             className="
-              text-white text-sm sm:text-base font-light 
-              leading-snug tracking-wide
+              text-white 
+              text-[10px] xs:text-[11px] sm:text-sm md:text-base 
+              font-light leading-snug tracking-wide
+              whitespace-nowrap
             "
           >
             Free Shipping on All Prepaid Orders • COD Available • 100% Ayurvedic & Made in India

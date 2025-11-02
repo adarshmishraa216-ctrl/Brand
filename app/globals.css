@@ -1,3 +1,24 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Meow Script';
+  src: url('/Inter,Meow_Script,Oswald,Outfit/Meow_Script/MeowScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior-y: contain;
+  overflow-x: hidden;
+}
+
+
+@supports (height: 100dvh) {
+  body {
+    min-height: 100dvh;
+  }
+}
 

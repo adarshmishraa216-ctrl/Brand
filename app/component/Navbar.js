@@ -6,7 +6,6 @@ import Image from "next/image";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Colors and styling constants
   const bgColor = "#FFF4E6";
   const borderColor = "#E1E1E1";
   const buttonBgColor = "#007850";
@@ -29,7 +28,7 @@ const Navbar = () => {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   );
 
@@ -43,13 +42,14 @@ const Navbar = () => {
         <div className="flex flex-row items-center py-2 px-6 lg:px-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/">
+            <Link href="/" className="outline-none focus:outline-none focus:ring-0">
               <Image
                 src="/akriti-icon.png"
                 alt="Charvak Ayurveda Logo"
                 width={140}
                 height={48}
                 priority
+                className="select-none outline-none focus:outline-none focus:ring-0 border-none"
               />
             </Link>
           </div>
@@ -115,7 +115,6 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          {/* Order button is disabled/hidden on mobile now */}
         </div>
       )}
     </nav>

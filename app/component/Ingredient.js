@@ -11,30 +11,28 @@ const IngredientsSection = () => {
       className="relative w-full overflow-hidden flex justify-center py-10"
       style={{ backgroundColor: sectionBgColor }}
     >
-      <div className="w-full max-w-[1200px] px-4 sm:px-6">
+      <div className="w-full max-w-[1200px] px-4 sm:px-2">
         
         {/* ✅ MOBILE VERSION (Visible below lg) */}
-        <div className="flex flex-col items-center justify-center gap-6 lg:hidden">
+        <div className="flex flex-col items-center justify-center gap-0 lg:hidden">
           
           {/* 1. Heading + Veg Image SIDE BY SIDE and CENTERED */}
-          {/* MODIFIED: Reduced width constraints and gap to ensure fit on narrow screens. */}
-          <div className="flex flex-row items-center justify-center gap-2 w-full px-4">
+          {/* MODIFIED: Increased image sizes while keeping side by side layout */}
+          <div className="flex flex-row items-center justify-center gap-0 w-full px-0">
             
             {/* Heading Image */}
-            {/* Reduced max-width to 55% of the container */}
             <div className="relative w-[70%] h-auto flex justify-end"> 
               <Image
                 src="/akriti-ingredient-head.png"
                 alt="Aakriti Ingredients Heading"
-                width={400} // Set fixed width for better mobile scaling
-                height={100}
+                width={500}
+                height={120}
                 className="object-contain"
               />
             </div>
 
             {/* Veg Image */}
-            {/* Reduced size to 40% of the container */}
-            <div className="relative w-[60%] h-[150px] sm:w-[200px] sm:h-[200px] flex justify-start">
+            <div className="relative w-[50%] h-[220px] sm:h-[320px] flex justify-start">
               <Image
                 src="/akriti-ingredient-veg.png"
                 alt="Ayurvedic Ingredients"

@@ -1,32 +1,42 @@
-"use client";
-import React from "react";
 
-const MobileBuyButton = () => {
+"use client";
+
+import { useEffect, useState } from "react";
+
+export default function MobileBuyButton() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (!isMobile) return null;
+
   return (
     <div
-      className="fixed bottom-0 left-0 w-full bg-white text-center py-4 z-50 md:hidden"
+      className="fixed left-0 w-full bg-white shadow-lg border-t border-gray-200 flex justify-center py-3 z-[9999] md:hidden"
       style={{
-        boxShadow: "0 -4px 12px rgba(0, 0, 0, 0.15)",
+        position: "fixed",
+        bottom: "0px",
+        paddingBottom: "calc(env(safe-area-inset-bottom) + 10px)",
+        transform: "translateY(0)",
+        transition: "transform 0.3s ease-in-out",
+        willChange: "transform",
+        boxShadow: "0 -4px 12px rgba(0, 0, 0, 0.1)",
       }}
     >
       <button
-        className="mx-auto block text-white font-semibold text-base hover:scale-[1.02] transition-all duration-200"
-        style={{
-          width: "380px",
-          height: "48px",
-          backgroundColor: "#007850",
-          borderRadius: "49px",
-          paddingTop: "12px",
-          paddingRight: "16px",
-          paddingBottom: "12px",
-          paddingLeft: "16px",
-          gap: "10px",
-        }}
+        className="w-[90%] text-white text-lg font-semibold rounded-full py-3 transition-transform duration-200 hover:scale-[1.03]"
+        style={{ backgroundColor: "#1B8065" }}
+        onClick={() => (window.location.href = "/shop")}
       >
         Buy Aakriti Now
       </button>
     </div>
   );
-};
-
-export default MobileBuyButton;
+}
