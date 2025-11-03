@@ -184,7 +184,7 @@ const BenefitsSection = () => {
                 
                 {/* 1. Mobile Heading - THIS IS THE ONLY HEADING IMAGE RENDERED */}
                 <Image
-                    src="/akriti-benfit-iconh.png" 
+                    src="/akriti-benefit-newhead.svg" 
                     alt="Benefits of Aakriti Heading Graphic"
                     width={320}
                     height={70}
