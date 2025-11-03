@@ -202,7 +202,7 @@ const HowToUseSection = () => {
                 src="/akriti-use-model.png"
                 alt="Model"
                 fill
-                className="object-contain scale-140 transform -translate-y-5 md:scale-150 md:transform md:-translate-x-10"
+                className="object-contain scale-140 transform -translate-y-2 md:scale-150 md:transform md:-translate-x-10 "
               />
             </div>
           </div>

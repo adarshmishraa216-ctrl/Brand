@@ -66,7 +66,7 @@ const IngredientsSection = () => {
             {/* Heading Image (55% Width of the container) */}
             <div className="relative w-[55%] h-auto flex justify-end items-center pr-2">
               <Image
-                src="/Aakriti-Ingredients-head4.png"
+                src="/Aakriti Ingredients.svg"
                 alt="Aakriti Ingredients Heading"
                 width={250}
                 height={70}
