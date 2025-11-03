@@ -74,7 +74,7 @@ const HowToUseSection = () => {
         {/* Right Content */}
         <div className="w-full lg:w-1/2 flex flex-col items-start p-8 lg:p-16">
           <div className="mb-12">
-            <img src="akriti-use-head.png" alt="How to use heading" />
+            <img src="akriti-use-newhead.svg" alt="How to use heading" />
           </div>
 
           <div className="flex flex-col space-y-8">

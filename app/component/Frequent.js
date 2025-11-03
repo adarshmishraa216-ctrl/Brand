@@ -9,7 +9,7 @@ const FAQSection = () => {
   const plusIconImageSrc = "/akriti-freq-plus.png";
 
   // Assets
-  const headingImageSrc = "/akriti-freq-head.png";
+  const headingImageSrc = "/akriti-freq-newhead.svg";
   const sideImageSrc = "/akriti-freq-product.png";
 
   // FAQ data

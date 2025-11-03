@@ -19,7 +19,7 @@ const IngredientsSection = () => {
             {/* Heading Image */}
             <div className="mb-6 w-full flex justify-start">
               <Image
-                src="/akriti-ingredient-head.png"
+                src="/akriti-ingredient-newhead.svg"
                 alt="Aakriti Ingredients Heading"
                 width={250}
                 height={70}

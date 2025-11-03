@@ -39,7 +39,7 @@ const BenefitsSection = () => {
        
         <div className="flex flex-col items-center mb-12 py-8">
           <Image
-            src="/akriti-benfit-iconh.png"
+            src="/akriti-benefit-newhead.svg"
             alt="Benefits of Aakriti Heading Graphic"
             width={300}
             height={50}
