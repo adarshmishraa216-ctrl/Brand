@@ -61,7 +61,7 @@ const FAQSection = () => {
             <img
               src={headingImageSrc}
               alt="Frequently Asked Questions Heading"
-              className="w-auto h-auto max-w-full"
+              className="w-auto h-auto max-w-full  md:transform md:translate-x-30"
             />
           </div>
 

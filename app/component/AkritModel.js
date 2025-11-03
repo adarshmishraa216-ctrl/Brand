@@ -40,7 +40,8 @@ const LovedByWomenSection = () => {
         <div className="text-center mb-10">
           
           <div className="flex justify-center">
-            <img src="akriti-model-newhead.svg" alt="" />
+            <img src="akriti-model-newhead.svg" alt="" 
+            className="md:scale-125"/>
           </div>
         </div>
 

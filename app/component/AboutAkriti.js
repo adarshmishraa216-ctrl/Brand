@@ -112,7 +112,7 @@ const AboutAakritiSection = () => {
           </p>
 
           {/* Four Boxes - MODIFIED: Custom Mobile Layout */}
-          <div className="w-full mb-3 md:mb-8 block lg:hidden "> {/* Added px-4 for overall horizontal padding */}
+          <div className="w-full mb-3 md:mb-1 block lg:hidden "> {/* Added px-4 for overall horizontal padding */}
             {/* Box 1 (Full Width) */}
             <div className="mb-4">
               {renderTrustBox(boxData[0], "w-full")}
@@ -173,13 +173,16 @@ const AboutAakritiSection = () => {
 
       {/* Bottom wave – only visible on desktop */}
       <div
-        className="hidden md:block absolute bottom-0 left-0 w-full h-32"
-        style={{
-          backgroundColor: sectionBgColor,
-          clipPath: "ellipse(100% 100% at 50% 100%)",
-          zIndex: 0,
-        }}
-      ></div>
+    // 1. Hide by default (mobile/sm)
+    // 2. Hide specifically at the md breakpoint
+    // 3. Display (block) only at the lg breakpoint and above
+    className="hidden lg:block absolute bottom-0 left-0 w-full h-32"
+    style={{
+        backgroundColor: sectionBgColor,
+        clipPath: "ellipse(100% 100% at 50% 100%)",
+        zIndex: 0,
+    }}
+></div>
     </section>
   );
 };

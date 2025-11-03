@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HeroBanner = () => {
-  const bgImageSrc = "/akriti-bgtop.jpg";
+  const bgImageSrc = "/akriti-herobanner-new.png";
   const containerBgColor = "#F3F3F3";
   const primaryButtonBg = "#007850";
   const buttonRadius = "49px";
@@ -70,7 +70,7 @@ const HeroBanner = () => {
           {/* 1. Main Heading: A Modern Woman's Ayurveda Ritual */}
           <h2
             // MODIFIED: Added mobile size (text-2xl) and scoped fixed size to desktop (lg:text-[36px])
-            className="font-normal mb-2 md:mb-1 text-[20px] lg:text-[36px]"
+            className="font-normal mb-2 md:mb-1 text-[20px] lg:text-[36px] md:text-4xl"
             style={{
               color: "#000000",
               fontFamily: "Rubik, sans-serif",
@@ -85,7 +85,7 @@ const HeroBanner = () => {
           {/* 2. Sub-Heading: The Natural Way */}
           <h3
             // MODIFIED: Added mobile size (text-3xl) and scoped fixed size to desktop (lg:text-[48px])
-            className="mb-4 md:mb-[14px] text-[24px] lg:text-[48px]"
+            className="mb-4 md:mb-[14px] text-[24px] lg:text-[48px] md:text-5xl"
             style={{
               color: "#DF67A3",
               fontFamily: "Meow Script, cursive", 
@@ -124,7 +124,7 @@ const HeroBanner = () => {
             className="
               object-contain
               w-[340px] sm:w-[360px] md:w-[400px] lg:w-[440px]
-              h-auto 
+              h-auto md:h-[300px] md:scale-108 md-transform 
             "
           />
         </div>

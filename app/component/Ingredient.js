@@ -53,7 +53,7 @@ const IngredientsSection = () => {
               alt="Ayurvedic Raw Materials"
               fill
               // FIX: Changed object-cover back to object-contain to show the whole image
-              className="object-contain scale-180 m-7"
+              className="object-contain scale-180 m-7 "
               sizes="(max-width: 1000px) 0, 50vw" // Sizes based on w-1/2 container
             />
           </div>
@@ -92,7 +92,7 @@ const IngredientsSection = () => {
                 <img
                   src="/akritoingredient-underline.png" // <--- REPLACE with your pink underline image path
                   alt="Pink Underline"
-                  className="w-full h-auto object-contain scale-150"
+                  className="w-full h-auto object-contain scale-150 md:scale-250 md:transform md:translate-y-5"
                 />
               </div>
               
@@ -104,7 +104,7 @@ const IngredientsSection = () => {
                 src="/akriti-ingredient-veg.png"
                 alt="Ayurvedic Ingredients"
                 fill
-                className="object-contain scale-180 rotate-270 transform translate-y-18"
+                className="object-contain scale-180 rotate-270 transform translate-y-18  md:transform md:translate-y-30"
               />
             </div>
           </div>

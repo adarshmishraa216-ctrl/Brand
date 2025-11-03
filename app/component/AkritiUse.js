@@ -65,7 +65,7 @@ const HowToUseSection = () => {
             src="/akriti-use-model.png"
             alt="Woman holding product jar"
             fill
-            className="object-cover lg:object-contain object-right-bottom transform scale-x-[-1] scale-130"
+            className="object-cover lg:object-contain object-right-bottom transform scale-x-[-1] scale-130 "
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority
           />
@@ -202,7 +202,7 @@ const HowToUseSection = () => {
                 src="/akriti-use-model.png"
                 alt="Model"
                 fill
-                className="object-contain scale-140 transform -translate-y-5"
+                className="object-contain scale-140 transform -translate-y-5 md:scale-150 md:transform md:-translate-x-10"
               />
             </div>
           </div>
